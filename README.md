@@ -1,10 +1,13 @@
 # Golang Kafka: your Go app for easier Kafka server creation
-    This is a simple Kafka integration within a Golang app. If you want to start a local Kafka server to create, list and delete your topics, this is your place! We'll add more features within the time, so follow us to be up to date with the new features =D
+    This is a simple Kafka integration within a Golang app. 
+    If you want to start a local Kafka server to create, list and delete your topics, this is your place! 
+    We'll add more features within the time, so follow us to be up to date with the new features =D
 
 # USAGE
 
     This application runs with Docker Compose to create containers and initialize the Kafka server. 
-    So, it is assumed that you have Docker and Docker Compose installed on your machine. Beyond that, you'll need Golang installed too. 
+    So, it is assumed that you have Docker and Docker Compose installed on your machine. 
+    Beyond that, you'll need Golang installed too. 
     Knowing that, this is how you get to run the app:
 
     - Enter on the root folder and run docker-compose up -d;
