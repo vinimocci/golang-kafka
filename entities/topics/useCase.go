@@ -50,3 +50,22 @@ func ListAllTopics() (map[string]sarama.TopicDetail, error) {
 
 	return topics, nil
 }
+
+func DeleteTopic(topicName string) (bool, error) {
+	brokers := []string{"localhost:9092"}
+
+	config := sarama.NewConfig()
+	admin, adminErr := sarama.NewClusterAdmin(brokers, config)
+	if adminErr != nil {
+		return false, adminErr
+	}
+	defer admin.Close()
+
+
+	deleteErr := admin.DeleteTopic(topicName)
+	if deleteErr != nil {
+		return false, deleteErr
+	}
+
+	return true, nil
+}
