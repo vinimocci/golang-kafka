@@ -20,7 +20,9 @@
 # COMMANDS
 
     - To create a topic: run "go run main.go --create-topic my_topic"
-    - to list all topics: run "go run main.go --list-topics"
+    - To list all topics: run "go run main.go --list-topics"
+    - To create a message by a specific topic: "go run main.go --create-message hello --topic my_topic"
+    - To delete a topic: "go run main.go --delete-topic my_topic"
 
 # CONTRIBUITION
 
