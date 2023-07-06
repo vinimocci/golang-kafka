@@ -39,3 +39,14 @@ func DeleteTopic(topicToDelete string){
 
 	fmt.Println("Topic deleted successfully!")
 }
+
+func CreateStringMessageOnGivenTopic(topic, message string){
+	fmt.Printf("Creating the message: %s for topic %s\n", message, topic)
+
+	_, createMsgErr := topics.CreateStringMessageOnGivenTopic(topic, message)
+	if createMsgErr != nil{
+		panic(createMsgErr)
+	}
+
+	fmt.Println("Message created successfully!")
+}

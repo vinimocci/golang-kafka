@@ -69,3 +69,26 @@ func DeleteTopic(topicName string) (bool, error) {
 
 	return true, nil
 }
+
+func CreateStringMessageOnGivenTopic(topic, message string) (bool, error){
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true
+
+	producer, err := sarama.NewSyncProducer([]string{"localhost:9092"}, config)
+	if err != nil {
+		return false, err
+	}
+	defer producer.Close()
+
+	messageToInsert := &sarama.ProducerMessage{
+		Topic: topic,
+		Value: sarama.StringEncoder(message), 
+	}
+
+	// Send the message to Kafka
+	_, _, err = producer.SendMessage(messageToInsert)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
+}
